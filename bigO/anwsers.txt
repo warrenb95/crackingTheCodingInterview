@@ -1,0 +1,4 @@
+q7. If a binary tree is not balanced what is the worst case runtime for finding an element.
+
+    O(n) as all elements could be on single branch possibly e.g. root is 50 and number to find
+    is 1 and all numbers go down left child until you hi the leaf node of 1.

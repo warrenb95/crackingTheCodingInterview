@@ -32,5 +32,5 @@ def checkPermutation(s1, s2):
     return True
 
 print(checkPermutation('abcabcabcabcabcabcabcabcabcabcabcabc', 'cbacbacbacbacbacbacbacbacbgacbacbacba'))
-print(checkPermutation('bc', 'cba'))
-print(checkPermutation('ab', 'ac'))
+print(checkPermutation('bc', 'cb'))
+print(checkPermutation('a', 'a'))

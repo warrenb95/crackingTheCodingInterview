@@ -1,4 +1,5 @@
 from node import Node
+from collections import deque
 
 class Tree:
     
@@ -50,6 +51,62 @@ class Tree:
             self.printPostOrder(node.right)
             print(node.data)
 
+    def binSearch(self, node, value):        
+        if node == None:
+            return False
+        
+        if node.data == value:
+            return True
+        
+        if value < node.data:
+            return self.binSearch(node.left, value)
+        else:
+            return self.binSearch(node.right, value)
+
+        return False
+
+    def dfs(self, value):
+        return self.dfsUtil(value, self.root, [])
+
+    def dfsUtil(self, value, node, visited):
+        if node == None:
+            return
+             
+        if node.data == value:
+            return True
+        
+        if node.left != None and node.left.data not in visited :
+            visited.append(node.left.data)
+            return self.dfsUtil(value, node.left, visited)
+        
+        if node.right != None and node.right.data not in visited:
+            visited.append(node.right.data)
+            return self.dfsUtil(value, node.right, visited)
+
+    def bfs(self, value):
+        queue = deque()
+        visited = []
+
+        visited.append(self.root.data)
+        queue.append(self.root)
+        
+        while len(queue) > 0:
+            node = queue.pop()
+            if node.data == value:
+                return True
+
+            print(node.data)
+            
+            if node.left != None and node.left.data not in visited:
+                visited.append(node.left.data)
+                queue.append(node.left)
+            if node.right != None and node.right.data not in visited:
+                visited.append(node.right.data)
+                queue.append(node.right)
+
+        return False
+
+
 t = Tree(Node(5))
 
 for i in range(10):
@@ -57,7 +114,10 @@ for i in range(10):
     t.add(node)
 
 t.printInOrder()
+# print('-------------------------')
+# t.printPreOrder()
+# print('-------------------------')
+# t.printPostOrder()
+
 print('-------------------------')
-t.printPreOrder()
-print('-------------------------')
-t.printPostOrder()
+print(t.bfs(8))

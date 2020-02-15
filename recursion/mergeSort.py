@@ -15,7 +15,7 @@ def mergeSort(dataset):
                 i +=1
             else:
                 dataset[k] = rightarr[j]
-                j += 1 
+                j += 1
             k += 1
 
         while len(leftarr) > i:

@@ -19,7 +19,7 @@ def partition(arr, low, high, pivot):
     return low
 
 # Function to do Quick sort
-def quickSort(arr,low,high):
+def quickSort(arr, low, high):
     if low < high:
 
         pivot = arr[(low + high ) // 2]

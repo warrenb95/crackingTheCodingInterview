@@ -16,7 +16,7 @@ def isUnique(s):
         else:
             return False
 
-    return True    
+    return True
 
 if __name__ == "__main__":
     print(isUnique('a'))

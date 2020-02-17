@@ -10,7 +10,7 @@ def palindrome_permutation(string):
             char_counter[char] += 1
         else:
             char_counter[char] = 1
-    
+
     odd_flag = False
 
     for val in char_counter.values():
@@ -19,7 +19,7 @@ def palindrome_permutation(string):
                 return False
             else:
                 odd_flag = True
-    
+
     return True
 
 output = palindrome_permutation('rracecarr')
